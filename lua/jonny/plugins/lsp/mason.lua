@@ -28,13 +28,13 @@ return {
 			automatic_installation = true,
 			-- list of servers for mason to install
 			ensure_installed = {
+				"ts_ls",
 				"tsp_server",
 				"html",
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
 				"graphql",
-				"emmet_ls",
 				"prismals",
 				"pyright",
 				"ruff", -- python
