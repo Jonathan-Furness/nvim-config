@@ -6,6 +6,10 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
+-- Scrool and center
+keymap.set({ "n", "i", "v" }, "<C-u>", "<C-u>zz", { desc = "Scroll up and center screen" })
+keymap.set({ "n", "i", "v" }, "<C-d>", "<C-d>zz", { desc = "Scroll down and center screen" })
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
