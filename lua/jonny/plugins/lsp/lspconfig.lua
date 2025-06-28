@@ -70,5 +70,30 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
+
+		-- MASON V2.0 APPROACH: Configure servers directly
+		-- Mason-lspconfig will automatically enable installed servers
+		-- Just configure the ones that need special settings
+
+		-- Configure Lua Language Server
+		lspconfig["lua_ls"].setup({
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+					completion = {
+						callSnippet = "Replace",
+					},
+				},
+			},
+		})
+
+		-- Configure GraphQL
+		lspconfig["graphql"].setup({
+			capabilities = capabilities,
+			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+		})
 	end,
 }
