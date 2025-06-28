@@ -37,6 +37,7 @@ return {
 				"ruff", -- python
 				"gopls", -- go
 				"dockerls",
+				"harper_ls",
 			},
 			automatic_enable = true,
 		})
