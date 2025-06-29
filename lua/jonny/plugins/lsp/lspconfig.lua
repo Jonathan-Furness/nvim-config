@@ -64,21 +64,21 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-    vim.diagnostics.config({
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] =  " ",
-          [vim.diagnostic.severity.WARN] =  " "
-          [vim.diagnostic.severity.HINT] =  "󰠠 "
-          [vim.diagnostic.severity.INFO] = " " 
-        }
-      },
-      virtual_text = {
-        spacing = 4,
-        source = "if_many",
-       prefix = "●", 
-      },
-      float = {
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+			},
+			virtual_text = {
+				spacing = 4,
+				source = "if_many",
+				prefix = "●",
+			},
+			float = {
 				focusable = false,
 				style = "minimal",
 				border = "rounded",
@@ -88,7 +88,7 @@ return {
 			},
 			severity_sort = true,
 			update_in_insert = false,
-    })
+		})
 
 		-- MASON V2.0 APPROACH: Configure servers directly
 		-- Mason-lspconfig will automatically enable installed servers
